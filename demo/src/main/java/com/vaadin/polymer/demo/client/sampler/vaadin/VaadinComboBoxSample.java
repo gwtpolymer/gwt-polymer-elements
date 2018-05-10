@@ -6,12 +6,12 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTMLPanel;
-import com.vaadin.polymer.Polymer;
 import com.vaadin.polymer.iron.widget.IronAjax;
 import com.vaadin.polymer.paper.widget.PaperToast;
 import com.vaadin.polymer.vaadin.widget.VaadinComboBox;
 import com.vaadin.polymer.vaadin.widget.event.ValueChangedEvent;
-import elemental2.core.Array;
+
+import elemental2.core.JsArray;
 import jsinterop.base.Js;
 
 public class VaadinComboBoxSample extends Composite {
@@ -25,7 +25,7 @@ public class VaadinComboBoxSample extends Composite {
     @UiField IronAjax ironAjax;
     @UiField PaperToast toast;
 
-    public static Array<Object> elements;
+    public static JsArray<Object> elements;
 
     public VaadinComboBoxSample() {
         initWidget(myUiBinder.createAndBindUi(this));

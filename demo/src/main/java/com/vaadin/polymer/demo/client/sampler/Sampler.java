@@ -1,5 +1,11 @@
 package com.vaadin.polymer.demo.client.sampler;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
 import com.google.gwt.core.shared.GWT;
 import com.google.gwt.dom.client.HeadingElement;
 import com.google.gwt.dom.client.PreElement;
@@ -21,7 +27,6 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Widget;
-
 import com.vaadin.polymer.Polymer;
 import com.vaadin.polymer.demo.client.sampler.gwt.JavaApiElement;
 import com.vaadin.polymer.demo.client.sampler.gwt.JavaApiWidget;
@@ -71,14 +76,9 @@ import com.vaadin.polymer.paper.widget.PaperButton;
 import com.vaadin.polymer.paper.widget.PaperDialog;
 import com.vaadin.polymer.paper.widget.PaperDrawerPanel;
 import com.vaadin.polymer.paper.widget.PaperItem;
-import elemental2.core.Array;
-import jsinterop.base.Js;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import elemental2.core.JsArray;
+import jsinterop.base.Js;
 
 public class Sampler extends Composite {
 
@@ -117,7 +117,7 @@ public class Sampler extends Composite {
     @UiField PreElement sourceContent;
     @UiField IronAjax ironAjax;
 
-    public static Array<Properties> contacts;
+    public static JsArray<Properties> contacts;
 
     private Widget createWidget(String name) {
         switch (name) {

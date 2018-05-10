@@ -11,13 +11,13 @@ import com.google.gwt.user.client.ui.HTMLPanel;
 import com.vaadin.polymer.Polymer;
 import com.vaadin.polymer.demo.client.sampler.Sampler;
 import com.vaadin.polymer.iron.event.IronSelectEvent;
-import com.vaadin.polymer.paper.PaperMenuElement;
+import com.vaadin.polymer.paper.PaperListboxElement;
 import com.vaadin.polymer.paper.widget.PaperToast;
 import com.vaadin.polymer.vaadin.Column;
 import com.vaadin.polymer.vaadin.widget.VaadinContextMenu;
 import com.vaadin.polymer.vaadin.widget.VaadinGrid;
 
-import elemental2.core.Array;
+import elemental2.core.JsArray;
 import elemental2.dom.HTMLElement;
 import jsinterop.base.Js;
 
@@ -35,7 +35,7 @@ public class VaadinContextMenuSample extends Composite {
     @UiField PaperToast toast;
 
     // ui:field do not work here because it's in a template that is not attached to the dom.
-    PaperMenuElement gridmenu;
+    PaperListboxElement gridmenu;
 
     public VaadinContextMenuSample() {
         Polymer.importHref(Arrays.asList("vaadin-context-menu", "paper-menu", "paper-item", "paper-item/paper-item-body"));
@@ -61,7 +61,8 @@ public class VaadinContextMenuSample extends Composite {
             if (gridmenu != null) {
 
                 // First time we select all items
-                Array<Integer> all = new Array<>(0,1,2,3,4);
+                JsArray<Integer> all = new JsArray<>(0, 1, 2, 3, 4);
+                
                 gridmenu.setSelectedValues(all);
 
                 gridmenu.addEventListener("selected-values-changed", e -> {
@@ -69,9 +70,9 @@ public class VaadinContextMenuSample extends Composite {
                         for (int i = 0; i < 5; i++) {
                             ((Column)grid.getColumns().getAt(i)).setHidden(true);
                         }
-                        Array<Number> selected = gridmenu.getSelectedValues();
+                        JsArray<Number> selected = gridmenu.getSelectedValues();
                         for (int i = 0; i < selected.length; i++) {
-                            final Array<Column> columns = grid.getColumns();
+                            final JsArray<Column> columns = grid.getColumns();
                             (columns.getAt(selected.getAt(i).intValue())).setHidden(false);
                         }
                         return null;

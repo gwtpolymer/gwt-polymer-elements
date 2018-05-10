@@ -10,8 +10,8 @@ import com.google.gwt.user.client.ui.HTMLPanel;
 import com.vaadin.polymer.iron.event.IronSelectEvent;
 import com.vaadin.polymer.iron.widget.IronSelector;
 import com.vaadin.polymer.paper.widget.PaperToast;
-import elemental2.core.Array;
-import jsinterop.base.Js;
+
+import elemental2.core.JsArray;
 
 public class IronSelectorSample extends Composite {
     interface SampleUiBinder extends UiBinder<HTMLPanel, IronSelectorSample> {
@@ -33,7 +33,7 @@ public class IronSelectorSample extends Composite {
         });
 
         selector2.getPolymerElement().addEventListener(IronSelectEvent.NAME, e -> {
-            Array<Object> selected = selector2.getSelectedValues();
+            JsArray<Object> selected = selector2.getSelectedValues();
             String s = "";
             for (int i = 0; i < selected.length; i++) {
                 s += selected.getAt(i) + " ";

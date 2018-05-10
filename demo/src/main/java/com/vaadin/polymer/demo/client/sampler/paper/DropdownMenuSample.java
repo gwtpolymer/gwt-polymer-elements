@@ -6,7 +6,7 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.vaadin.polymer.paper.widget.PaperItem;
-import com.vaadin.polymer.paper.widget.PaperMenu;
+import com.vaadin.polymer.paper.widget.PaperListbox;
 import com.vaadin.polymer.paper.widget.PaperTab;
 import com.vaadin.polymer.paper.widget.PaperTabs;
 
@@ -28,12 +28,12 @@ public class DropdownMenuSample extends Composite {
             "vulcanodon", "wannanosaurus", "xenoceratops", "yandusaurus",
             "zephyrosaurus" };
 
-    @UiField PaperMenu menu1;
-    @UiField PaperMenu menu2;
-    @UiField PaperMenu menu3;
+    @UiField PaperListbox menu1;
+    @UiField PaperListbox menu2;
+    @UiField PaperListbox menu3;
     @UiField PaperTabs tabs1;
-    @UiField PaperMenu menu4;
-    @UiField PaperMenu menu5;
+    @UiField PaperListbox menu4;
+    @UiField PaperListbox menu5;
 
     public DropdownMenuSample() {
         initWidget(ourUiBinder.createAndBindUi(this));

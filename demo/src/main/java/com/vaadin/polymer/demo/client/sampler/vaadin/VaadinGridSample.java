@@ -23,7 +23,7 @@ import com.vaadin.polymer.vaadin.event.SelectedItemsChangedEvent;
 import com.vaadin.polymer.vaadin.event.SortOrderChangedEvent;
 import com.vaadin.polymer.vaadin.widget.VaadinGrid;
 
-import elemental2.core.Array;
+import elemental2.core.JsArray;
 import elemental2.dom.DomGlobal;
 import elemental2.dom.HTMLElement;
 import jsinterop.base.Js;
@@ -43,7 +43,7 @@ public class VaadinGridSample extends Composite {
 
     private double opened = -1;
     private List<Properties> original;
-    private Array<Properties> items;
+    private JsArray<Properties> items;
     private List<Properties> list;
 
     public VaadinGridSample() {
@@ -55,7 +55,7 @@ public class VaadinGridSample extends Composite {
 
         // We have a global list of contacts
         items = Sampler.contacts;
-        list = Arrays.asList(items.asArray());
+        list = items.asList();
         grid.setItems(items);
         // Save a copy to use in filters.
         original = new ArrayList<>(list);
@@ -68,7 +68,7 @@ public class VaadinGridSample extends Composite {
 
             // Feature: custom renders
             // Custom renderer for cell
-            Array<Column> columns= grid.getColumns();
+            JsArray<Column> columns= grid.getColumns();
             Column column = columns.getAt(0);
             column.setRenderer(cell -> {
                 Cell c = (Cell)cell;
@@ -106,7 +106,7 @@ public class VaadinGridSample extends Composite {
             });
             // Open the row details on grid selection
             grid.getPolymerElement().addEventListener(SelectedItemsChangedEvent.NAME, evnt -> {
-                Array<Number> n = grid.getSelection().selected(null, 0, 200);
+                JsArray<Number> n = grid.getSelection().selected(null, 0, 200);
                 grid.setRowDetailsVisible(opened, false);
                 if (n.length == 1) {
                     grid.setRowDetailsVisible(opened = n.getAt(0).doubleValue(), true);

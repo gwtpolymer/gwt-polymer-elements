@@ -9,7 +9,7 @@
                 <h4>Basic Menu</h4>
                 <div class="horizontal-section">
                     <p:PaperDropdownMenu label="Dinosaurs">
-                        <p:PaperMenu ui:field="menu1" addStyleNames="dropdown-content"/>
+                        <p:PaperListbox ui:field="menu1" addStyleNames="dropdown-content"/>
                     </p:PaperDropdownMenu>
                 </div>
             </div>
@@ -20,7 +20,7 @@
                 <h4>Pre-selected Value</h4>
                 <div class="horizontal-section">
                     <p:PaperDropdownMenu label="Dinosaurs">
-                        <p:PaperMenu ui:field="menu2" addStyleNames="dropdown-content" selected="1"/>
+                        <p:PaperListbox ui:field="menu2" addStyleNames="dropdown-content" selected="1"/>
                     </p:PaperDropdownMenu>
                 </div>
             </div>
@@ -31,7 +31,7 @@
                 <h4>Disabled</h4>
                 <div class="horizontal-section">
                     <p:PaperDropdownMenu disabled="true" label="Disabled">
-                        <p:PaperMenu ui:field="menu3" addStyleNames="dropdown-content"/>
+                        <p:PaperListbox ui:field="menu3" addStyleNames="dropdown-content"/>
                     </p:PaperDropdownMenu>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                 <h4>No Label Float</h4>
                 <div class="horizontal-section">
                     <p:PaperDropdownMenu addStyleNames="letters" label="Letters" noLabelFloat="true">
-                        <p:PaperMenu ui:field="menu4" addStyleNames="dropdown-content"/>
+                        <p:PaperListbox ui:field="menu4" addStyleNames="dropdown-content"/>
                     </p:PaperDropdownMenu>
                 </div>
             </div>
@@ -64,7 +64,7 @@
                 <h4>No Ripple, No Animations</h4>
                 <div class="horizontal-section">
                     <p:PaperDropdownMenu label="Dinosaurs" noink="true" noAnimations="true">
-                        <p:PaperMenu ui:field="menu5" addStyleNames="dropdown-content"/>
+                        <p:PaperListbox ui:field="menu5" addStyleNames="dropdown-content"/>
                     </p:PaperDropdownMenu>
                 </div>
             </div>
